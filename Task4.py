@@ -233,14 +233,14 @@ import numpy as np
 from os import listdir
 from os.path import isfile, join
 
-face_dict = {"[0]": "dushyant ", 
-                      "[1]": "tanuja",
-                      "[2]": "yogita"
+face_dict = {"[0]": "Saini ", 
+                      "[1]": "Ganesh",
+                      "[2]": "Siddhu"
                       }
 
-face_dict_name = {"dushyant": "dushyant ", 
-                      "tanuja": "tanuja",
-                      "yogita": "yogita"
+face_dict_name = {"Saini": "Saini ", 
+                      "Ganesh": "Ganesh",
+                      "Siddhu": "Siddhu"
                       }
 
 def draw_test(name, pred, im):
