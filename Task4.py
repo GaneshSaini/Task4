@@ -90,7 +90,7 @@ model.layers
 
 
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation, Flatten
+from keras.layers import Dense, Dropout, Activation, Flatten,GlobalAveragePooling2D
 from keras.layers import Conv2D, MaxPooling2D, ZeroPadding2D
 from keras.layers.normalization import BatchNormalization
 from keras.models import Model
@@ -117,8 +117,8 @@ print(modelnew.summary())
 
 from keras.preprocessing.image import ImageDataGenerator
 
-train_data_dir = 'D://datasets/face/training/'
-validation_data_dir = 'D://datasets/face/validation/'
+train_data_dir = 'C://face_dataset/training/'
+validation_data_dir = 'C://dataset/validation/'
 
 train_datagen = ImageDataGenerator(
       rescale=1./255,
@@ -192,33 +192,6 @@ history = modelnew.fit_generator(
 modelnew.save("face_reco_vgg.h5")
 
 
-# 
-
-# In[ ]:
-
-
-
-
-
-# 
-
-# In[ ]:
-
-
-
-
-
-# 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
 from keras.models import load_model
 
 classifier = load_model('face_reco_vgg.h5')
@@ -263,7 +236,7 @@ def getRandomImage(path):
     return cv2.imread(file_path+"/"+image_name)    
 
 for i in range(0,10):
-    input_im = getRandomImage("D://datasets/face/validation/")
+    input_im = getRandomImage("C://face+_dataset/validation/")
     input_original = input_im.copy()
     input_original = cv2.resize(input_original, None, fx=0.5, fy=0.5, interpolation = cv2.INTER_LINEAR)
     
